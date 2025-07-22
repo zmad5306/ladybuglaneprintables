@@ -3,10 +3,11 @@ name: Deploy Astro site to GitHub Pages
 on:
   push:
     branches:
-      - main # or 'master' or your default branch
+      - main
+  workflow_dispatch:
 
 permissions:
-  contents: write # Required to push to the gh-pages branch
+  contents: write
 
 jobs:
   deploy:
