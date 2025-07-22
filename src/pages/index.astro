@@ -1,0 +1,170 @@
+---
+import products from '../data/etsy_rss_listings.json';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VXFYF4NR9R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VXFYF4NR9R');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ladybug Lane Printables</title>
+    <meta name="description" content="Printable activity packs for preschoolers and young learners. Fun, creative, and educational digital downloads!" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="canonical" href="https://ladybuglaneprintables.com/" />
+    <meta property="og:title" content="Ladybug Lane Printables" />
+    <meta property="og:description" content="Printable activity packs for preschoolers and young learners. Fun, creative, and educational digital downloads!" />
+    <meta property="og:image" content="logo.jpeg" />
+    <meta property="og:url" content="https://ladybuglaneprintables.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Ladybug Lane Printables",
+        "url": "https://ladybuglaneprintables.com/",
+        "description": "Printable activity packs for preschoolers and young learners. Fun, creative, and educational digital downloads!",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Ladybug Lane Printables",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://ladybuglaneprintables.com/logo.jpeg"
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Quicksand", sans-serif;
+        background: #fff5f5;
+        color: #333;
+      }
+      header {
+        background: #e63946;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+      }
+      header img {
+        width: 120px;
+        margin-bottom: 0.5rem;
+      }
+      h1 {
+        font-family: "Fredoka One", cursive;
+        font-size: 2rem;
+      }
+      .intro {
+        text-align: center;
+        padding: 2rem;
+      }
+      .intro h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .intro p {
+        max-width: 600px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+      }
+      .cta {
+        text-align: center;
+        margin: 2rem;
+      }
+      .cta a {
+        background: #e63946;
+        color: white;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        font-size: 1.2rem;
+        border-radius: 8px;
+        transition: background 0.3s;
+      }
+      .cta a:hover {
+        background: #c9283a;
+      }
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        padding: 2rem;
+      }
+      .product-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 300px;
+        margin: 0 auto;
+        text-decoration: none;
+        color: inherit;
+      }
+      .product-card img {
+        max-width: 300px;
+        max-height: 300px;
+        width: auto;
+        height: auto;
+        display: block;
+      }
+      .product-card h2 {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      footer {
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 1rem;
+        background: #f8d7da;
+        margin-top: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="logo.jpeg" alt="Ladybug Lane Printables Logo" />
+      <h1>Ladybug Lane Printables</h1>
+      <p>Playful & Creative Learning for Little Minds</p>
+    </header>
+
+    <section class="intro">
+      <h2>Welcome to Ladybug Lane!</h2>
+      <p>
+        We create beautifully designed, printable activity packs for
+        preschoolers and young learners. From coloring pages to early math and
+        reading activities, our products spark joy, imagination, and learning —
+        all from the comfort of home.
+      </p>
+    </section>
+
+    <main id="shop">
+      <section class="product-grid">
+        {products.map(product => (
+          <a href={product.url} class="product-card" target="_blank">
+            <img src={product.image} alt={product.title} loading="lazy" />
+            <h2>{product.title}</h2>
+          </a>
+        ))}
+      </section>
+    </main>
+
+    <footer>&copy; {new Date().getFullYear()} Ladybug Lane Printables. All rights reserved.</footer>
+  </body>
+</html>
