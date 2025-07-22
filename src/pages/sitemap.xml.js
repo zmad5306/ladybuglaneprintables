@@ -3,7 +3,7 @@ import products from "../data/etsy_rss_listings.json";
 export async function GET() {
   const base = "https://ladybuglaneprintables.com";
 
-  const staticPages = ["/", "/#shop"];
+  const staticPages = ["/"];
 
   const urls = [
     ...staticPages.map(
