@@ -113,26 +113,49 @@ import products from '../data/etsy_rss_listings.json';
       }
       .product-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: 1fr;
         gap: 1.5rem;
-        padding: 2rem;
+        padding: 1rem;
+        margin: 0 auto;
+        place-items: center; /* ✅ centers the items both horizontally and vertically */
+        box-sizing: border-box;
       }
+
+      @media (min-width: 600px) {
+        .product-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          place-items: stretch; /* Go back to normal grid alignment */
+        }
+      }
+
+      @media (min-width: 900px) {
+        .product-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .product-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+
       .product-card {
+        width: 100%;
+        max-width: 300px; /* ✅ ensures it's never too wide */
+        text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
-        max-width: 300px;
-        margin: 0 auto;
         text-decoration: none;
         color: inherit;
       }
+
       .product-card img {
-        max-width: 300px;
-        max-height: 300px;
-        width: auto;
+        width: 100%;
         height: auto;
         display: block;
+        max-width: 100%;
       }
       .product-card h2 {
         font-size: 0.9rem;
